@@ -15,8 +15,15 @@ jobs:
     steps:
       - name: Get Clone 
         uses: actions/checkout@v2
+      - name: Install Node jobs
+        uses: actions/setup-node@v6
+
       - name: Read the Txt read_the_file
         run: cat roy.txt
 
-
+      - name: Changing Direcory
+        run: cd ostad 
+      
+      - name: Print the file Content
+        run: cat hello.txt
 
