@@ -25,5 +25,8 @@ jobs:
         run: cd ostad 
       
       - name: Print the file Content
-        run: cat hello.txt
+        run: |
+          pwd
+          ls
+          cat hello.txt
 
