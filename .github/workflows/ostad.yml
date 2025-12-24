@@ -1,0 +1,22 @@
+name: Ostad CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  read_the_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Clone 
+        uses: actions/checkout@v2
+      - name: Read the Txt read_the_file
+        run: cat roy.txt
+
+
+
