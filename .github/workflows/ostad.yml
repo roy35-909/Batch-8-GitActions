@@ -10,23 +10,11 @@ on:
       - main
 
 jobs:
-  read_the_file:
-    runs-on: ubuntu-latest
+  setup-nginx:
+    runs-on: self-hosted
+  
     steps:
-      - name: Get Clone 
-        uses: actions/checkout@v2
-      - name: Install Node jobs
-        uses: actions/setup-node@v6
+        - name: Install The nginx
+          run: sudo apt install nginx -y
 
-      - name: Read the Txt read_the_file
-        run: cat roy.txt
-
-      - name: Changing Direcory
-        run: cd ostad 
-      
-      - name: Print the file Content
-        run: |
-          pwd
-          ls
-          cat hello.txt
 
