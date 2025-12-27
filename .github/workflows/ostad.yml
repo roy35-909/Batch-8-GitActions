@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - dev
+    
   pull_request:
     branches:
       - main
@@ -16,5 +16,10 @@ jobs:
     steps:
         - name: Install The nginx
           run: sudo apt install nginx -y
+
+        - name: Checkout The Repo
+          uses: actions/checkout@v4
+
+
 
 
