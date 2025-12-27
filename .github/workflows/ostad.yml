@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    runs-on: windows-late
+    runs-on: ubuntu-latest
   
     steps:
         - name: Install The nginx
@@ -24,8 +24,9 @@ jobs:
         - name: Start The Process
           run: pm2 start "npm run dev"
 
-  setup-node:
+  deploy:
     runs-on: self-hosted
+    depends-on: test
     steps:
       - name: Setup Node 
         run: sudo apt update
