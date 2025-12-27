@@ -10,8 +10,8 @@ on:
       - main
 
 jobs:
-  setup-nginx:
-    runs-on: self-hosted
+  test:
+    runs-on: windows-late
   
     steps:
         - name: Install The nginx
@@ -19,7 +19,14 @@ jobs:
 
         - name: Checkout The Repo
           uses: actions/checkout@v4
+        - name: Install Node js
+          run: 
+        - name: Start The Process
+          run: pm2 start "npm run dev"
 
-
-
+  setup-node:
+    runs-on: self-hosted
+    steps:
+      - name: Setup Node 
+        run: sudo apt update
 
